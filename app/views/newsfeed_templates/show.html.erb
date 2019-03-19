@@ -13,17 +13,21 @@
 
       <!-- Edit link newsfeed start -->
       <div class="col">
-        <a href="/newsfeeds/<%= @newsfeed.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit newsfeed
-        </a>
+        <% if current_user == @newsfeed.user %>
+          <a href="/newsfeeds/<%= @newsfeed.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit newsfeed
+          </a>
+        <% end %>
       </div>
       <!-- Edit link newsfeed end -->
 
       <!-- Delete link newsfeed start -->
       <div class="col">
-        <a href="/delete_newsfeed/<%= @newsfeed.id %>" class="btn btn-block btn-outline-secondary">
-          Delete newsfeed
-        </a>
+        <% if current_user == @newsfeed.user %>
+          <a href="/delete_newsfeed/<%= @newsfeed.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete newsfeed
+          </a>
+        <% end %>
       </div>
       <!-- Delete link newsfeed end -->
     </div>

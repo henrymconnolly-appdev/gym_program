@@ -17,9 +17,11 @@
         <!-- Show link end -->
 
         <!-- Delete link start -->
-        <a href="/delete_newsfeed_from_follower/<%= newsfeed.id %>">
-          Delete
-        </a>
+        <%if current_user == newsfeed.user %>
+          <a href="/delete_newsfeed_from_profile/<%= newsfeed.id %>">
+            Delete
+          </a>
+        <% end %>
         <!-- Delete link end -->
 
       </li>

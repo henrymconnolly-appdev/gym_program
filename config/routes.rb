@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Newsfeed resource:
+
+  # CREATE
+  get("/newsfeeds/new", { :controller => "newsfeeds", :action => "new_form" })
+  post("/create_newsfeed", { :controller => "newsfeeds", :action => "create_row" })
+
+  # READ
+  get("/newsfeeds", { :controller => "newsfeeds", :action => "index" })
+  get("/newsfeeds/:id_to_display", { :controller => "newsfeeds", :action => "show" })
+
+  # UPDATE
+  get("/newsfeeds/:prefill_with_id/edit", { :controller => "newsfeeds", :action => "edit_form" })
+  post("/update_newsfeed/:id_to_modify", { :controller => "newsfeeds", :action => "update_row" })
+
+  # DELETE
+  get("/delete_newsfeed/:id_to_remove", { :controller => "newsfeeds", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Profile resource:
 
   # CREATE

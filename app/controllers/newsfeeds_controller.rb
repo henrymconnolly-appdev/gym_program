@@ -10,7 +10,8 @@ class NewsfeedsController < ApplicationController
   end
 
   def index
-    @newsfeeds = Newsfeed.page(params[:page]).per(10)
+    @q = Newsfeed.ransack(params[:q])
+    @newsfeeds = @q.result(:distinct => true).includes(:user, :follower).page(params[:page]).per(10)
 
     render("newsfeed_templates/index.html.erb")
   end

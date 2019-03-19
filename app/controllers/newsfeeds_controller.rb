@@ -56,7 +56,7 @@ class NewsfeedsController < ApplicationController
   def update_row
     @newsfeed = Newsfeed.find(params.fetch("id_to_modify"))
 
-    @newsfeed.user_id = params.fetch("user_id")
+    
     @newsfeed.profile_id = params.fetch("profile_id")
 
     if @newsfeed.valid?

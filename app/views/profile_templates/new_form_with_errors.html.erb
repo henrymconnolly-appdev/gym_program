@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @profile.present? %>
   <% if @profile.errors.any? %>
     <% @profile.errors.full_messages.each do |message| %>
@@ -16,27 +15,17 @@
 
 <hr>
 
-<!-- Form profile start -->
 <form action="/create_profile" method="post">
-<!-- Form profile end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for total_lift start -->
   <div class="form-group">
     <label for="total_lift">
       Total lift
     </label>
 
-    <!-- Input for total_lift start -->
     <input type="text" id="total_lift" name="total_lift" class="form-control" value="<%= @profile.total_lift %>">
-    <!-- Input for total_lift end -->
   </div>
-  <!-- Label and input for total_lift end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create profile

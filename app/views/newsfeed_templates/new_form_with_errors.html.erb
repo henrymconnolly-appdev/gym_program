@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @newsfeed.present? %>
   <% if @newsfeed.errors.any? %>
     <% @newsfeed.errors.full_messages.each do |message| %>
@@ -16,27 +15,17 @@
 
 <hr>
 
-<!-- Form newsfeed start -->
 <form action="/create_newsfeed" method="post">
-<!-- Form newsfeed end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for profile_id start -->
   <div class="form-group">
     <label for="profile_id">
       Profile
     </label>
 
-    <!-- Input for profile_id start -->
     <input type="text" id="profile_id" name="profile_id" class="form-control" value="<%= @newsfeed.profile_id %>">
-    <!-- Input for profile_id end -->
   </div>
-  <!-- Label and input for profile_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create newsfeed

@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @profile.newsfeeds.each do |newsfeed| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/newsfeeds/<%= newsfeed.id %>">
           <%= newsfeed.user_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == newsfeed.user %>
           <a href="/delete_newsfeed_from_profile/<%= newsfeed.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="profile_newsfeeds_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "profile_templates/profile_newsfeeds_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

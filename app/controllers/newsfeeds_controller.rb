@@ -53,6 +53,14 @@ class NewsfeedsController < ApplicationController
     end
   end
 
+  def destroy_row_from_follower
+    @newsfeed = Newsfeed.find(params.fetch("id_to_remove"))
+
+    @newsfeed.destroy
+
+    redirect_to("/profiles/#{@newsfeed.user_id}", notice: "Newsfeed deleted successfully.")
+  end
+
   def destroy_row
     @newsfeed = Newsfeed.find(params.fetch("id_to_remove"))
 

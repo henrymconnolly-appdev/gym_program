@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "profiles#index"
   # Routes for the Newsfeed resource:
 
   # CREATE

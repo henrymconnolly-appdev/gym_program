@@ -10,7 +10,7 @@ class NewsfeedsController < ApplicationController
   end
 
   def index
-    @newsfeeds = Newsfeed.all
+    @newsfeeds = Newsfeed.page(params[:page]).per(10)
 
     render("newsfeed_templates/index.html.erb")
   end

@@ -13,17 +13,21 @@
 
       <!-- Edit link profile start -->
       <div class="col">
-        <a href="/profiles/<%= @profile.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit profile
-        </a>
+        <% if current_user == @profile.user %>
+          <a href="/profiles/<%= @profile.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit profile
+          </a>
+        <% end %>
       </div>
       <!-- Edit link profile end -->
 
       <!-- Delete link profile start -->
       <div class="col">
-        <a href="/delete_profile/<%= @profile.id %>" class="btn btn-block btn-outline-secondary">
-          Delete profile
-        </a>
+        <% if current_user == @profile.user %>
+          <a href="/delete_profile/<%= @profile.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete profile
+          </a>
+        <% end %>
       </div>
       <!-- Delete link profile end -->
     </div>

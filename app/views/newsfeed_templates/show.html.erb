@@ -38,7 +38,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @newsfeed.user_id %>
+        <% if @newsfeed.user.present? %>
+          <a href="/users/<%= @newsfeed.user_id %>">
+            <%= @newsfeed.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

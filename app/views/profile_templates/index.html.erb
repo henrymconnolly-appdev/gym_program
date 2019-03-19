@@ -58,7 +58,11 @@
 
         <!-- Display profile.user_id start -->
         <td>
-          <%= profile.user.email %>
+          <% if profile.user.present? %>
+            <a href="/users/<%= profile.user.id %>">
+              <%= profile.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display profile.user_id end -->
 

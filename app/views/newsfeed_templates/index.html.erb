@@ -58,7 +58,11 @@
 
         <!-- Display newsfeed.user_id start -->
         <td>
-          <%= newsfeed.user.email %>
+          <% if newsfeed.user.present? %>
+            <a href="/users/<%= newsfeed.user.id %>">
+              <%= newsfeed.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display newsfeed.user_id end -->
 

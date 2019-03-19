@@ -6,6 +6,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
+    @newsfeed = Newsfeed.new
     @profile = Profile.find(params.fetch("id_to_display"))
 
     render("profile_templates/show.html.erb")

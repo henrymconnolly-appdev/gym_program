@@ -32,6 +32,21 @@ class NewsfeedsController < ApplicationController
     end
   end
 
+  def create_row_from_profile
+    @newsfeed = Newsfeed.new
+
+    @newsfeed.user_id = params.fetch("user_id")
+    @newsfeed.profile_id = params.fetch("profile_id")
+
+    if @newsfeed.valid?
+      @newsfeed.save
+
+      redirect_to("/profiles/#{@newsfeed.user_id}", notice: "Newsfeed created successfully.")
+    else
+      render("newsfeed_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @newsfeed = Newsfeed.find(params.fetch("prefill_with_id"))
 

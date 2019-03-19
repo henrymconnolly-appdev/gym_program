@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/newsfeeds/new", { :controller => "newsfeeds", :action => "new_form" })
   post("/create_newsfeed", { :controller => "newsfeeds", :action => "create_row" })
+  post("/create_newsfeed_from_profile", { :controller => "newsfeeds", :action => "create_row_from_profile" })
 
   # READ
   get("/newsfeeds", { :controller => "newsfeeds", :action => "index" })
